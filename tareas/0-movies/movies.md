@@ -14,6 +14,6 @@ Jack the Giant Slayer (2013)
 ### ¿Que pelicula tiene el id 115713?
 Ex Machina (2015)
 ### ¿Que comando usaste para extraer los titulos según su id?
-csvgrep movies.csv -c movieId -m "el id que me das"
+csvgrep movies.csv -c movieId -m "id"
 ### ¿Que id tiene la pelicula "Paranoia Agent"?
 108977
