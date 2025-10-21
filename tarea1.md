@@ -9,3 +9,11 @@ csvcut movies.csv -c title,genres | csvgrep -m "The" -c title
 csvgrep -c genres -m "Drama" movies.csv | csvcut -c movieId,title
 ## Crea un comando que te devuelva **solo** los títulos de películas del año 2015, ordenados alfabéticamente.
 csvgrep -c title -m "2015" movies.csv | csvsort -c "title" | csvcut -c "title"
+## ¿Que pelicula tiene el id 101025?
+Jack the Giant Slayer (2013)
+## ¿Que pelicula tiene el id 115713?
+Ex Machina (2015)
+## ¿Que comando usaste para extraer los titulos según su id?
+csvgrep movies.csv -c movieId -m "el id que me das"
+## ¿Que id tiene la pelicula "Paranoia Agent"?
+108977
