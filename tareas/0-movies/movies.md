@@ -15,6 +15,7 @@ Subelo a tu repositorio privado de la asignatura, en el directorio tareas, dentr
 movieId | titles | genres
 ### ¿Cuantas filas tiene? Dame el comando que te devolvería **solo** el número de filas.
 Tiene 149,532 filas
+
 dam1@dam1:~/markdown$ csvcut movies.csv -c movieId 
 ### Crea un comando que te devuelva **solo** titulo y género de películas que empiecen por *The*.
 dam1@dam1:~/markdown$ csvcut movies.csv -c title,genres | csvgrep -m "The" -c title
