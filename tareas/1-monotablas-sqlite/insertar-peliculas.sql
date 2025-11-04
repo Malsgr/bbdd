@@ -1,0 +1,1 @@
+INSERT INTO peliculas.csv(id,title,director,year,rating) FROM
