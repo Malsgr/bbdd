@@ -1,1 +1,1 @@
-SELECT * FROM peliculas;
+SELECT * FROM peliculas.csv;
