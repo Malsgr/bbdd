@@ -1,4 +1,4 @@
-INSERT INTO peliculas (id, title, director, year, rating)
+INSERT INTO peliculas.csv (id, title, director, year, rating)
 VALUES
 (1, "Toy Story", "John Lasseter", 1995, 6.7)
 (2, "Jumanji", "Joe Johnston", 1995, 6.7)
