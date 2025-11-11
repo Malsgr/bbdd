@@ -1,4 +1,4 @@
-INSERT INTO productos.csv (id, name, price, stock, sale)
+INSERT INTO TABLE productos (id, name, price, stock, sale)
 VALUES
 (1, "Manzanas", 40.99, 145, 15%)
 (2, "Caza a reacción de cambate F-22 Raptor", 5.89, 2, 98%)

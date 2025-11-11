@@ -8,7 +8,6 @@ Así
 ```sql
 ALTER TABLE peliculas.csv ADD COLUMN genre TEXT;
 ```
-Aunque también es muy fácil alterar el archivo .csv con csvkit o directamente en el editor de GitHuub.
 
 ### La columna genre ya existe, ¿hay algún problema con esto?
 
@@ -33,13 +32,14 @@ Exactamente lo mismo que en una den las preguntas anteriores, tampoco se me ocur
 
 ### Si quisiéramos asegurarnos de que el precio nunca sea negativo, ¿cómo lo harías?
 
-Al crear la tabla, habría que hacerlo con un sql, no manualmente como he estado haciendo yo hasta ahora. Habría que añadirle reglas al sql de creación de la tabla.
+Añadiendo CHECK (price >= 0)
+
 ```sql
-CREATE TABLE productos.csv (
+CREATE TABLE productos (
     id INTEGER PRIMARY KEY,
     name TEXT,
     price REAL CHECK (price >= 0),
     stock INTEGER,
-    sale INTEGRER
+    sale TEXT
 );
 ```

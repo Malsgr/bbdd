@@ -1,1 +1,1 @@
-SELECT name,price FROM productos.csv WHERE sales NOT LIKE "0%";
+SELECT name,price FROM table productos WHERE sales NOT LIKE "0%";

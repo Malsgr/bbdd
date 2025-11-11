@@ -1,1 +1,1 @@
-SELECT * FROM peliculas.csv WHERE year=(intruduzca año);
+SELECT * FROM TABLE peliculas WHERE year REAL PRIMARY KEY;

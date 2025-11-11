@@ -1,1 +1,1 @@
-SELECT * FROM productos.csv WHERE price >= (insertar valor);
+SELECT * FROM TABLE productos WHERE price REAL PRIMARY KEY;
