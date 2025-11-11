@@ -1,3 +1,4 @@
+DROP TABLE productos;
 CREATE TABLE productos (
     id INTEGER PRIMARY KEY,
     name TEXT,
