@@ -1,3 +1,4 @@
+DROP TABLE peliculas;
 CREATE TABLE peliculas (
     id INTEGER PRIMARY KEY,
     title TEXT,
