@@ -15,7 +15,7 @@ Empiezo por el primer sospechoso
 ```sql
 SELECT * FROM person;
 ```
-Hago esto primero porque quiero comprobar el formato en el que esta escrito la dirracción.
+Hago esto primero porque quiero comprobar el formato en el que esta escrito la dirrección.
 Prodedí a pegarme 20 minutos intentando averiguar porque
 ```sql
 SELECT * FROM person WHERE address LIKE "Ocean Drive" AND address BETWEEN 300 AND 400;
