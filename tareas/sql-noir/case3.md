@@ -18,7 +18,7 @@ SELECT * FROM person;
 Hago esto primero porque quiero comprobar el formato en el que esta escrito la dirracción.
 Prodedí a pegarme 20 minutos intentando averiguar porque
 ```sql
-SELECT * FROM person WHERE address LIKE "Ocean Drive" AND adress BETWEEN 300 AND 400;
+SELECT * FROM person WHERE address LIKE "Ocean Drive" AND address BETWEEN 300 AND 400;
 ```
 no devolvía nada. Al final me rendí y me dí cuenta que en los objetivos no se me pide nada más aparte de encontrar al asesino,
 por lo que hize
