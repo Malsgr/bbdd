@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra papel y tijera</title>
+</head>
+
+<body>
+    <p id="score"></p>
+    <p>
+        <span id="jugador">?</span>
+        <span>vs</span>
+        <span id="enemigo">?</span>
+    </p>
+    <p id="resultado">Elige una opción</p>
+    <button onclick="jugar()">piedra</button>
+    <button onclick="jugar()">papel</button>
+    <button onclick="jugar()">tijera</button>
+
+    <script>
+        const displayScore = document.querySelector("#score")
+        const eleccionJugador = document.querySelector("#jugador")
+        const eleccionEjemplo = document.querySelector("#enemigo")
+        const displayResultado = document.querySelector("#resultado")
+        let score = 0
+        
+        displayScore.textContent = score
+
+        console.log(parseInt(Math.random() * 100))
+        const elecciones = ["piedra", "papel", "tijera"]
+
+        function choose(array) {
+            return array[parseInt(Math.random() * array.length)]
+        }
+
+        function empatar() {
+            displayResultado.textContent = "Ha habido empate"
+        }
+        function perder() {
+            displayResultado.textContent = "Has perdido"
+        }
+        function ganar() {
+            displayResultado.textContent = "Has ganado"
+        }
+
+        function jugar(eleccion) {
+            const eleccionEnemigo = choose(elecciones)
+            console.log("eleccion jugador: ", eleccionJugador)
+            console.log("eleccion enemigo: ", eleccionEnemigo)
+
+            if (eleccion === eleccionEnemigo) empatar()
+            else if (eleccion === "piedra" && eleccionEnemigo === "papel") perder()
+            else if (eleccion === "piedra" && eleccionEnemigo === "tijera") ganar()
+            else if (eleccion === "papel" && eleccionEnemigo === "tijera") perder()
+            else if (eleccion === "papel" && eleccionEnemigo === "piedra") ganar()
+            else if (eleccion === "tijera" && eleccionEnemigo === "piedra") perder()
+            else if (eleccion === "tijera" && eleccionEnemigo === "papel") ganar()
+        }
+    </script>
+</body>
+
+</html>
