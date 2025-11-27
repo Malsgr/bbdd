@@ -1,36 +1,37 @@
 #!/bin/bash
 
-read -p "Introduce tu nombre para Git: " git_name
-read -p "Introduce tu email para Git: " git_email
+# Asegúrate de que el sistema está actualizado
+sudo apt update && sudo apt upgrade -y
 
-git config --global user.name "$git_name"
-git config --global user.email "$git_email"
+# Instalar Snap si no está instalado
+sudo apt install -y snapd
 
-sudo atp snap install --clasic code
-code --install-extension ritwickdey.liveserver
-code --install-extension shd101wyy.markdown-preview-enhanced
+# Instalar Visual Studio Code con snap
+sudo snap install code --classic
 
-sudo apt install -y fonts-firacode || true
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBra>
-unzip -o JetBrainsMono.zip -d ~/.local/share/fonts
-fc-cache -f -v
+# Instalar GitHub CLI
+sudo apt install -y wget curl gpg
+wget https://github.com/cli/cli/releases/latest/download/gh_2.26.1_linux_amd64.deb
+sudo dpkg -i gh_2.26.1_linux_amd64.deb
+sudo apt-get install -f  # Para solucionar dependencias faltantes
 
-curl -s https://ohmyposh.dev/install.sh | bash -s
+# Instalar JetBrains Mono Font
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d ~/.fonts
+fc-cache -fv  # Actualiza las fuentes
 
-sudo apt install -y wget || true
-sudo apt install -y xclip || true
-sudo apt install -y sqlite3 || true
-sudo apt install -y python3 || true
-sudo apt install -y jq || true
+# Agregar repositorio de GitHub CLI
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+  | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
-(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
-	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
-	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
-	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-	&& sudo apt update \
-	&& sudo apt install gh -y
+# Instalar herramientas útiles como Git y Curl si no están instalados
+sudo apt install -y git curl
 
-    cp .bashrc ~
+# (Opcional) Instalación de otras utilidades según necesidad
+# sudo apt install -y tmux vim htop
+
+# Asegúrate de que las fuentes están actualizadas
+sudo fc-cache -fv
+
+# Cambiar configuración de .bashrc (este paso es opcional y no se cambiará como lo pediste)
+cp .bashrc ~  # Asumiendo que el archivo .bashrc existe en el directorio actual
