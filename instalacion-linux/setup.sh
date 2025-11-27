@@ -1,37 +1,35 @@
 #!/bin/bash
 
-# Asegúrate de que el sistema está actualizado
 sudo apt update && sudo apt upgrade -y
 
-# Instalar Snap si no está instalado
 sudo apt install -y snapd
 
-# Instalar Visual Studio Code con snap
 sudo snap install code --classic
 
-# Instalar GitHub CLI
 sudo apt install -y wget curl gpg
 wget https://github.com/cli/cli/releases/latest/download/gh_2.26.1_linux_amd64.deb
 sudo dpkg -i gh_2.26.1_linux_amd64.deb
-sudo apt-get install -f  # Para solucionar dependencias faltantes
+sudo apt-get install -f  
 
-# Instalar JetBrains Mono Font
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
+sudo apt install -y wget || true
+sudo apt install -y xclip || true
+sudo apt install -y sqlite3 || true
+sudo apt install -y python3 || true
+sudo apt install -y jq || true
+
+sudo apt install -y unzip
+
 wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-unzip JetBrainsMono.zip -d ~/.fonts
-fc-cache -fv  # Actualiza las fuentes
+unzip JetBrainsMono.zip -d ~/.local/share/fonts
+fc-cache -fv  
 
-# Agregar repositorio de GitHub CLI
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
   | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
-# Instalar herramientas útiles como Git y Curl si no están instalados
 sudo apt install -y git curl
 
-# (Opcional) Instalación de otras utilidades según necesidad
-# sudo apt install -y tmux vim htop
+fc-cache -fv
 
-# Asegúrate de que las fuentes están actualizadas
-sudo fc-cache -fv
-
-# Cambiar configuración de .bashrc (este paso es opcional y no se cambiará como lo pediste)
-cp .bashrc ~  # Asumiendo que el archivo .bashrc existe en el directorio actual
+cp .bashrc ~  
